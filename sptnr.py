@@ -211,7 +211,7 @@ def get_rating_from_popularity(popularity):
 
 def process_track(track_id, artist_name, album, track_name):
     def search_spotify(query):
-        spotify_url = f"https://api.spotify.com/v1/search?q={query}&type=track&limit=1"
+        spotify_url = f"https://api.spotify.com/v1/search?q={query[:250]}&type=track&limit=1"
         headers = {"Authorization": f"Bearer {SPOTIFY_TOKEN}"}
 
         try:
